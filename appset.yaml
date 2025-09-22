@@ -6,7 +6,7 @@ spec:
   generators:
     - git:
         repoURL: 'https://github.com/Suraj01Dev/Automate-Orchestrate-Innovate-The-DevOps-Playbook-for-the-AI-Era.git'
-        revision: HEAD
+        revision: main
         directories:
           - path: iam_policies/*
   template:
@@ -16,7 +16,7 @@ spec:
       project: default
       source:
         repoURL: 'https://github.com/Suraj01Dev/Automate-Orchestrate-Innovate-The-DevOps-Playbook-for-the-AI-Era.git'
-        targetRevision: HEAD
+        targetRevision: main
         chart: iam-charts
         helm:
           parameters:
@@ -26,7 +26,3 @@ spec:
               value: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-      syncPolicy:
-        automated:
-          prune: true
-          selfHeal: true
