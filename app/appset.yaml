@@ -4,8 +4,6 @@ metadata:
   name: nginx-appset
   namespace: argocd
 spec:
-  # The generators field is used to define the clusters or namespaces where the application should be deployed.
-  # This example uses a list generator to specify a single destination.
   generators:
   - list:
       elements:
