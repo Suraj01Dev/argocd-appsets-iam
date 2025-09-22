@@ -19,9 +19,11 @@ spec:
         targetRevision: HEAD
         chart: iam-charts
         helm:
-          values: |
-            serviceName: {{path.basename}}
-            policiesFolder: {{path}}
+          parameters:
+            - name: serviceName
+              value: '{{path.basename}}'
+            - name: policiesFolder
+              value: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
       syncPolicy:
