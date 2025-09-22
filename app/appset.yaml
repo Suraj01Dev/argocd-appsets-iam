@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: nginx-appset
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: https://kubernetes.default.svc
+            namespace: nginx-app1
+            name: nginx-app1
+          - cluster: https://kubernetes.default.svc
+            namespace: nginx-app2
+            name: nginx-app2
+  template:
+    metadata:
+      name: '{{name}}'
+    spec:
+      project: default
+      destination:
+        server: '{{cluster}}'
+        namespace: '{{namespace}}'
+      source:
+        repoURL: 'https://charts.bitnami.com/bitnami'
+        chart: nginx
+        targetRevision: 15.14.0
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
