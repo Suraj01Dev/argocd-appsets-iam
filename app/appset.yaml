@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: appset-iam
+  name: microservice-appset
   namespace: argocd
 spec:
   generators:
@@ -12,7 +12,7 @@ spec:
           - path: iam_policies/*
   template:
     metadata:
-      name: '{{path.basename}}-iam'
+      name: '{{path.basename}}'
     spec:
       project: default
       source:
