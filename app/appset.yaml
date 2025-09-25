@@ -6,7 +6,7 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: 'https://github.com/Suraj01Dev/Automate-Orchestrate-Innovate-The-DevOps-Playbook-for-the-AI-Era.git'
+        repoURL: 'https://github.com/Suraj01Dev/microsvc-charts.git'
         revision: main
         directories:
           - path: iam_policies/*
@@ -16,7 +16,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: 'https://github.com/Suraj01Dev/Automate-Orchestrate-Innovate-The-DevOps-Playbook-for-the-AI-Era.git'
+        repoURL: 'https://github.com/Suraj01Dev/microsvc-charts.git'
         path: '.'
         targetRevision: main
         helm: 
